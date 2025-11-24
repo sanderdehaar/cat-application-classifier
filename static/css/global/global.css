@@ -1,0 +1,142 @@
+/* 
+* Global css
+*/
+
+@font-face {
+  font-family: 'primaireFont';
+  src: url('../../fonts/PPTelegraf-Ultrabold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'secondaireFont';
+  src: url('../../fonts/PPTelegraf-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'accentFont';
+  src: url('../../fonts/Streetbomber-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --color-blue: #0780E4;
+  --color-green: #6FBA41;
+  --color-dark-gray: #1A1A1A;
+  --color-orange: #FF9A36;
+  --color-orange-dark: #BA7026;
+  --color-orange-hover: #9b5d20;
+  --color-orange-light: #FFCD7D;
+
+  --color-white: white;
+
+  --font-primary: 'primaireFont', sans-serif;
+  --font-secondary: 'secondaireFont', sans-serif;
+  --font-accent: 'accentFont', sans-serif;
+
+  --font-size-xs: clamp(12px, 1vw, 14px);
+  --font-size-sm: 16px;
+  --font-size-md: clamp(16px, 1.6vw, 20px);
+  --font-size-lg: clamp(18px, 1.8vw, 22px);
+  --font-size-xl: clamp(22px, 2.2vw, 28px);
+  --font-size-xxl: clamp(28px, 2.8vw, 36px);
+  --font-size-heading: clamp(40px, 6vw, 100px);
+  --font-size-accent: clamp(36px, 5vw, 72px);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.hero-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: left 0.5s ease;
+  z-index: 0;
+}
+
+.cursor-image {
+  opacity: 0;
+  transition: opacity 120ms ease;
+  --cursor-offset-x: 0px;
+  --cursor-offset-y: 30px;
+  display: none;
+}
+
+.cursor-image.is-active {
+  opacity: 1;
+  display: block;
+}
+
+#hero-scan.is-active {
+  cursor: none;
+}
+
+.hero-section.is-active {
+  z-index: 1;
+}
+
+.hero-section.to-left {
+  left: -100%;
+}
+
+.hero-section.to-right {
+  left: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media only screen and (max-width: 1200px) { 
+  .cursor-image {
+    width: 30vw;
+  }
+}
+
+@media only screen and (max-width: 1050px) { 
+  .cursor-image {
+    display: none !important;
+  }
+  #hero-scan.is-active {
+    cursor: default;
+  }
+}

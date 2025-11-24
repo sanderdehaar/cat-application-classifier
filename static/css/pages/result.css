@@ -1,0 +1,375 @@
+/* 
+* Result css
+*/
+
+#hero-result {
+    background-color: var(--color-orange);
+    display: flex;
+    justify-content: center;
+}
+
+#hero-result .container {
+    position: relative;
+    max-width: 1600px;
+    margin: 0 2.6rem;
+    top: 100px;
+    width: 100vw;
+    height: calc(100dvh - 200px);
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+#hero-result .container .content {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#hero-result .container .content h1 {
+    font-family: var(--font-primary);
+    color: var(--color-white);
+    font-size: 110px;
+    line-height: 100px;
+    white-space: nowrap;
+}
+
+#hero-result .container .content p {
+    font-family: var(--font-secondary);
+    color: var(--color-white);
+    font-size: 32px;
+    line-height: 38px;
+    white-space: nowrap;
+    margin-top: -50px;
+}
+
+#hero-result .container .content h1 span {
+    display: block;
+}
+
+#hero-result .container .content h1 span:last-child {
+    margin-top: -1rem;
+}
+
+#hero-result .container .content button {
+    width: 260px;
+    height: 80px;
+    font-family: var(--font-primary);
+    background-color: var(--color-orange-dark);
+    color: var(--color-white);
+    border: none;
+    margin-top: 30px;
+    font-size: 28px;
+}
+
+#hero-result #return {
+    display: none;
+}
+
+#hero-result .container .content button:hover {
+    cursor: pointer;
+    background-color: var(--color-orange-hover);
+}
+
+#hero-result .container .results {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+#hero-result .container .results .card {
+    position: relative;
+    z-index: 10;
+    max-width: 600px;
+    min-width: 600px;
+    width: 100%;
+    max-height: 800px;
+    min-height: 660px;
+    height: calc(100% - 90px);
+    margin-top: 90px;
+    background-color: var(--color-orange-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#hero-result .container .results .card .card-line-one {
+    position: absolute;
+    height: 300px;
+    margin-top: -260px;
+    top: 0;
+    left: 280px;
+}
+
+#hero-result .container .results .card .card-line-two {
+    position: absolute;
+    z-index: 1;
+    height: 260px;
+    margin-top: -160px;
+    top: 0;
+    left: 340px;
+    will-change: transform, opacity;
+}
+
+#hero-result .container .results .card .top-bar {
+    height: 40px;
+    width: 60%;
+    border-radius: 50px;
+    background-color: var(--color-orange);
+    margin-top: 30px;
+    margin-bottom: 30px
+}
+
+#hero-result .container .results .card .information {
+    width: calc(100% - 5.2rem);
+    height: calc(100% - 172px);
+}
+
+#hero-result .container .results .card .information .top {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    gap: 35px;
+}
+
+#hero-result .container .results .card .information .top img {
+    height: 270px;
+    width: 100%;
+    max-width: 220px;
+    object-fit: cover;
+    background-color: var(--color-orange-dark);
+}
+
+#hero-result .container .results .card .information .top .data {
+    width: 100%;
+    height: 100%;
+}
+
+#hero-result .container .results .card .information .top .data ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#hero-result .container .results .card .information .top .data ul li {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-primary);
+    color: var(--color-orange-dark);
+    font-size: 18px;
+}
+
+#hero-result .container .results .card .information .top .data ul li span {
+    font-family: var(--font-secondary);
+    white-space: wrap;
+    direction: rtl;
+    text-align: right;
+    max-width: 120px;
+}
+
+#hero-result .container .results .card .information .line {
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-orange-dark);
+    margin: 30px 0px;
+}
+
+#hero-result .container .results .card .information .bottom {
+    display: flex;
+    flex-direction: column;
+}
+
+#hero-result .container .results .card .information .bottom h2 {
+    font-family: var(--font-primary);
+    color: var(--color-orange-dark);
+    font-size: 28px;
+    margin: 0;
+    margin-bottom: 15px;
+    line-height: 15px;
+}
+
+#hero-result .container .results .card .information .bottom p {
+    margin: 0;
+    font-family: var(--font-secondary);
+    color: var(--color-orange-dark);
+    font-size: 18px;
+}
+
+#hero-result .container #information-mobile {
+    display: none;
+}
+
+#hero-result .container #information-mobile .description {
+    display: flex;
+    gap: 35px;
+}
+
+#hero-result .container #information-mobile .description h2 {
+    font-family: var(--font-primary);
+    color: var(--color-white);
+    font-size: 28px;
+    margin: 0;
+    margin-bottom: 35px;
+    margin-top: 35px;
+    line-height: 15px;
+}
+
+#hero-result .container #information-mobile h3 {
+    font-family: var(--font-primary);
+    color: var(--color-white);
+    font-size: 28px;
+    margin: 0;
+    margin-bottom: 35px;
+    line-height: 15px;
+}
+
+
+#hero-result .container #information-mobile .description p {
+    margin: 0;
+    margin-bottom: 35px;
+    font-family: var(--font-secondary);
+    color: var(--color-white);
+    font-size: 18px;
+}
+
+#hero-result .container #information-mobile .description img {
+    height: 320px;
+    min-height: 320px;
+    width: 240px;
+    min-width: 240px;
+    margin-bottom: 35px;
+    max-width: max-content;
+    object-fit: cover;
+    background-color: rgba(0, 0, 0, 0.12);
+}
+
+#hero-result .container #information-mobile ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 0;
+    margin-bottom: 35px;
+    padding: 0;
+}
+
+#hero-result .container #information-mobile ul li {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-primary);
+    color: var(--color-white);
+    font-size: 18px;
+    padding: 15px 15px;
+    background-color: rgba(0, 0, 0, 0.12);
+}
+
+#hero-result .container #information-mobile ul li span {
+    font-family: var(--font-secondary);
+    white-space: wrap;
+    direction: rtl;
+    text-align: right;
+    max-width: 120px;
+}
+
+#hero-result .container #information-mobile button {
+    padding: 30px 15px;
+    font-family: var(--font-primary);
+    background-color: var(--color-white);
+    color: var(--color-orange);
+    border: none;
+    font-size: 20px;
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+#hero-result .container #information-mobile button:hover {
+    cursor: pointer;
+}
+
+/* Media Query */
+
+@media only screen and (max-width: 1550px) {
+    #hero-result .container {
+        min-height: 500px;
+    }
+    #hero-result .container .content h1 {
+        font-size: 80px;
+        line-height: 80px;
+    }
+    #hero-result .container .content p {
+        font-size: 28px;
+        line-height: 36px;
+    }
+    #hero-result .container .results .card {
+        position: relative;
+        max-width: 500px;
+        min-width: 500px;
+        width: 100%;
+        max-height: 800px;
+        min-height: 660px;
+        height: calc(100% - 90px);
+        margin-top: 90px;
+        background-color: var(--color-orange-light);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #hero-result .container .results .card .information .top {
+        gap: 15px;
+    }
+    #hero-result .container .results .card .card-line-one {
+        left: 210px;
+    }
+    #hero-result .container .results .card .card-line-two {
+        left: 270px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    #hero-result .container {
+        height: max-content;
+    }
+    #hero-result .container #information-mobile {
+        display: block;
+    }
+    #hero-result .container .content {
+        display: none;
+    }
+    #hero-result .container .results {
+        display: none;
+    }
+    #hero-result .container {
+        height: max-content;
+    }
+    #hero-result {
+        overflow-y: scroll;
+    }
+}
+
+@media only screen and (max-width: 750px) { 
+    #hero-result .container #information-mobile .description img {
+        height: 270px;
+    }
+    #hero-result .container #information-mobile .description {
+        flex-direction: column;
+        gap: 0px;
+    }
+    #hero-result .container #information-mobile .description img {
+        width: 220px;
+        min-width: 220px;
+    }
+}
+
+@media only screen and (max-width: 550px) { 
+    #hero-result .container {
+        margin: 0 1.3rem;
+    }
+}

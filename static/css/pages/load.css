@@ -1,0 +1,151 @@
+/* 
+* Load css
+*/
+
+#hero-load {
+    background-color: var(--color-dark-gray);
+    display: flex;
+    justify-content: center;
+}
+
+#hero-load .container {
+    position: relative;
+    max-width: 1600px;
+    margin: 0 2.6rem;
+    top: 100px;
+    width: 100vw;
+    height: calc(100vh - 200px);
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    min-height: 700px;
+}
+
+#hero-load .container .content {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 35px;
+}
+
+#hero-load .container .content .load-animation {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+#hero-load .container .content .load-animation span {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-white);
+  transform: scale(1);
+  animation: pulse 1.4s infinite ease-in-out;
+}
+
+#hero-load .container .content .load-animation span:nth-child(1) {
+  animation-delay: 0s;
+}
+#hero-load .container .content .load-animation span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+#hero-load .container .content .load-animation span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes pulse {
+  0%, 80%, 100% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.7);
+  }
+}
+
+#hero-load .container .content p {
+    font-family: var(--font-secondary);
+    color: var(--color-white);
+    font-size: 32px;
+    line-height: 38px;
+    white-space: nowrap;
+    direction: rtl;
+    text-align: right;
+    margin: 0;
+}
+
+#hero-load .cat2-svg {
+    position: absolute;
+    top: 4vh;
+    left: 0;
+    max-width: 1150px;
+    width: 100%;
+    height: calc(100vh - 315px);
+    min-height: 600px;
+    z-index: 1;
+    pointer-events: none;
+    align-self: top;
+}
+
+/* Media Query */
+
+@media only screen and (max-width: 1550px) {
+  #hero-load .container .content p {
+      font-size: 28px;
+      line-height: 36px;
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  #hero-load .container {
+      min-height: 600px;
+  }
+  #hero-load .container .content p {
+      font-size: 28px;
+      line-height: 36px;
+  }
+  #hero-load .cat2-svg {
+      top: 2vh;
+      min-height: 450px;
+  }
+  #hero-load .container .content .load-animation span {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  #hero-load .container .content {
+    gap: 25px;
+  }
+  #hero-load .container {
+      min-height: 500px;
+  }
+  #hero-load .container .content p {
+      font-size: 22px;
+      line-height: 28px;
+  }
+  #hero-load .container .content .load-animation span {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+@media only screen and (max-width: 550px) { 
+  #hero-load .container .content {
+    gap: 15px;
+  }
+  #hero-load .container {
+      width: calc(100vw - 2.6rem);
+      margin: 0;
+  }
+  #hero-load .container .content p {
+      font-size: 18px;
+      line-height: 22px;
+      white-space: wrap;
+      word-wrap: normal;
+      overflow-wrap: break-word;
+      hyphens: auto; 
+  }
+}
