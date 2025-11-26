@@ -15,30 +15,65 @@ export function initFileUpload(slider, scanButtonSelector) {
     });
   }
 
+  function showUploadModal() {
+    const modal = document.createElement('div');
+    modal.id = 'upload-modal';
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        document.body.removeChild(modal);
+      }
+    });
+
+    const content = document.createElement('div');
+    content.className = 'modal-content';
+
+    const closeBtn = document.createElement('button');
+    closeBtn.className = 'close-modal';
+    closeBtn.innerHTML = '&times;';
+    closeBtn.addEventListener('click', () => {
+      document.body.removeChild(modal);
+    });
+
+    const p = document.createElement('p');
+    p.textContent = "For the best results, upload a clear photo of your cat showing its face and body. Make sure your cat is the main object in the image and not objects like tables, glasses, or toys. Use good lighting and a simple background. AI may sometimes make mistakes and results are for guidance only.";
+
+    const uploadButton = document.createElement('button');
+    uploadButton.textContent = "Upload Image";
+    uploadButton.addEventListener('click', () => {
+      fileInput.value = '';
+      // fileInput.click();
+      document.body.removeChild(modal);
+    });
+
+    content.appendChild(closeBtn);
+    content.appendChild(p);
+    content.appendChild(uploadButton);
+    modal.appendChild(content);
+    document.body.appendChild(modal);
+  }
+
   scanButton.addEventListener('click', () => {
-    fileInput.value = '';
-    fileInput.click();
+    showUploadModal();
   });
 
   fileInput.addEventListener('change', async () => {
     const file = fileInput.files[0];
     if (!file) return;
 
-    // Reset the UI before uploading the new image
+    // Reset the UI
     document.querySelector('#hero-result h2').textContent = 'Loading...';
     const descriptionEl = document.querySelector('#hero-result .bottom p');
     descriptionEl.textContent = 'Loading breed info...';
     const imageEl = document.querySelector('#hero-result .information img');
-    imageEl.src = '';  // Reset image
+    imageEl.src = '';
 
     const traitsList = document.querySelector('#hero-result .data ul');
-    traitsList.innerHTML = '';  // Clear old traits
+    traitsList.innerHTML = '';
 
-    // Clear mobile section
     const mobileSection = document.getElementById('information-mobile');
     if (mobileSection) mobileSection.innerHTML = '';
 
-    // Continue with the file upload process
     const ext = file.name.split('.').pop().toLowerCase();
     if (!['jpg', 'jpeg', 'png'].includes(ext)) {
       alert('Only JPG, JPEG, or PNG files are allowed.');
@@ -66,7 +101,8 @@ export function initFileUpload(slider, scanButtonSelector) {
           return;
         }
 
-        // Populate new breed data
+        console.log('Predicted cat breed:', data.prediction);
+
         document.querySelector('#hero-result h2').textContent = data.prediction;
         descriptionEl.textContent = 'Loading breed info...';
         traitsList.innerHTML = '';
@@ -74,8 +110,8 @@ export function initFileUpload(slider, scanButtonSelector) {
         try {
           const apiRes = await fetch(`https://api.thecatapi.com/v1/breeds/search?q=${data.prediction}`);
           const breeds = await apiRes.json();
-
           let breed = breeds.length ? breeds[0] : null;
+
           let cleanDescription = breed?.description?.replace(/<br\s*\/?>/gi, ' ').trim() || 'N/A';
           if (window.innerWidth > 1200) {
             const maxWords = 40;
@@ -84,7 +120,6 @@ export function initFileUpload(slider, scanButtonSelector) {
               cleanDescription = wordsArray.slice(0, maxWords).join(' ') + '…';
             }
           }
-
           descriptionEl.textContent = cleanDescription;
 
           const traitsData = {

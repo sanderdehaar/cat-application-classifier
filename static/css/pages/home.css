@@ -112,9 +112,9 @@
     font-size: var(--font-size-sm);
 }
 
-#hero-home .tag span:nth-child(2) {
+/* #hero-home .tag span:nth-child(2) {
     margin-top: -10px;
-}
+} */
 
 #hero-home .bottom-bar button {
     position: absolute;
@@ -157,9 +157,9 @@
     flex-direction: column;
 }
 
-#hero-home .bottom-bar .copyright .text span:nth-child(2) {
+/* #hero-home .bottom-bar .copyright .text span:nth-child(2) {
     margin-top: -10px;
-}
+} */
 
 #hero-home .bottom-bar .copyright .number {
     position: relative; 
